@@ -1,3 +1,7 @@
+# React Pong
+
+This was built using Create React and GPT-4.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
