@@ -22,6 +22,7 @@ const Paddle = ({ x, y, onMove }) => {
         };
       }}
       onDragMove={handleDragMove}
+      onTouchMove={handleDragMove}
     />
   );
 };
@@ -36,39 +37,6 @@ const Pong = () => {
   const [ballPos, setBallPos] = useState({ x: 295, y: 195 });
   const [ballVelocity, setBallVelocity] = useState({ x: 2, y: 2 });
   const [aiPaddleY, setAIPaddleY] = useState(150);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       const newBallPos = {
-//         x: ballPos.x + ballVelocity.x,
-//         y: ballPos.y + ballVelocity.y,
-//       };
-
-//       // Collision with paddles
-//       if (
-//         (newBallPos.x <= 30 && newBallPos.y >= leftPaddleY - 10 && newBallPos.y <= leftPaddleY + 110) ||
-//         (newBallPos.x >= 590 && newBallPos.y >= rightPaddleY - 10 && newBallPos.y <= rightPaddleY + 110)
-//       ) {
-//         setBallVelocity({ x: -ballVelocity.x, y: ballVelocity.y });
-//       } else {
-//         // Collision with top or bottom wall
-//         if (newBallPos.y <= 0 || newBallPos.y >= 390) {
-//           setBallVelocity({ x: ballVelocity.x, y: -ballVelocity.y });
-//         }
-
-//         // Reset ball position if it goes out of bounds
-//         if (newBallPos.x < 0 || newBallPos.x > 600) {
-//           newBallPos.x = 295;
-//           newBallPos.y = 195;
-//           setBallVelocity({ x: 2, y: 2 });
-//         }
-
-//         setBallPos(newBallPos);
-//       }
-//     }, 10);
-
-//     return () => clearInterval(interval);
-//   }, [ballPos, ballVelocity, leftPaddleY, rightPaddleY]);
 
 useEffect(() => {
     const interval = setInterval(() => {
